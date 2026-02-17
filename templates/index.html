@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Number Guessing Game</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+    
+    <div class="game-box">
+        <h1>🎯 Number Guessing Game</h1>
+        <p>Guess a number between 1 and 100</p>
+
+        <form method="post">
+            <input type="number" name="guess" required>
+            <button type="submit">Guess</button>
+        </form>
+
+        <h3>{{ message }}</h3>
+    </div>
+
+    <div class="attempt-box">
+        <h2>📊 Your Attempts</h2>
+        <ul>
+            {% for g in history %}
+                <li>{{ g }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+
+</div>
+
+</body>
+</html>
